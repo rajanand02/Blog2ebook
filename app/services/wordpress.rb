@@ -1,9 +1,12 @@
 class Wordpress
   def initialize url
+    @domain = url
     @url = "https://public-api.wordpress.com/rest/v1/sites/#{url}/posts"
   end
 
   def title_list
+    post_result_from_redis = $redis.get(@domain)
+    return JSON.parse(post_result_from_redis) if(post_result_from_redis)
     posts_result = []
     puts @url
     json_page = Net::HTTP.get_response(URI.parse(@url))
@@ -19,6 +22,7 @@ class Wordpress
         end
       end
     end
+    $redis.set(@domain, posts_result.to_json)
     posts_result
   end
 
