@@ -1,5 +1,19 @@
 <% if(@links) %>
-  <% @links.each do |link| %>
-    <%= link %>
-  <% end %>
+<% @links.each do |link| %>
+<%= link %>
 <% end %>
+<% end %>
+<div class="col-sm-12 col-md-12">
+  <div class="col-md-6 col-md-offset-3">
+    <h2>Convert your favourite blog into epub</h2>
+    <div class="form-group">
+      <%= form_tag('/') do %>
+      <div class="input-group">
+        <%= text_field_tag  class: 'form-control' %>
+        <%= submit_tag 'search', class: "btn btn-success" %>
+        <% end %>
+      </div>
+    </div>
+  </div>  
+</div>
+
