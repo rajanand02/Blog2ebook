@@ -1,11 +1,15 @@
-<table class="table">
-  <tr><th>Url</th><th>Title</th></tr>
-  <% if(@links) %>
+<table class="table table-bordered" id="search-result">
+  <thead>
+    <tr><td>Title</td><td>Url</td></tr>
+  </thead>
+  <tbody>
+    <% if(@links) %>
     <% @links.each do |link| %>
-      <tr>
-        <td><%= link["URL"]  %></td>
-        <td><%= link["title"]  %></td>
-      </tr>
+    <tr>
+      <td><%= link["title"]  %></td>
+      <td><%= link["URL"]  %></td>
+    </tr>
     <% end %>
-  <% end %>
+    <% end %>
+  </tbody>
 </table>

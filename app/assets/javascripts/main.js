@@ -10,6 +10,9 @@ $(document).ready(function(){
       success: function(data){
         $("#notify").hide();
         $("div.main_content").html(data);
+        $('div.main_content table').dataTable({
+          "sPaginationType": "bootstrap"
+        });
       }
     });
     return false;
