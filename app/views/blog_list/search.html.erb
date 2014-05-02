@@ -1,0 +1,11 @@
+<table class="table">
+  <tr><th>Url</th><th>Title</th></tr>
+  <% if(@links) %>
+    <% @links.each do |link| %>
+      <tr>
+        <td><%= link["URL"]  %></td>
+        <td><%= link["title"]  %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
