@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   root 'blog_list#index'
   get "blog_list/search"
+  get "blog_list/fetch"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -22,4 +22,11 @@ class BlogService
       Wordpress.new(@domain).title_list
     end
   end
+
+  def fetch links
+    if @blog_type == "wordpress"
+      domain, links = [@domain, Wordpress.new(@domain).fetch(links)]
+    end
+  end
+
 end

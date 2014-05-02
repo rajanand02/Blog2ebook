@@ -12,12 +12,30 @@ $(document).ready(function(){
       success: function(data){
         $("#notify").hide();
         $("div.main_content").html(data);
-        $('div.main_content table').dataTable({
-          "sPaginationType": "bootstrap"
-        });
         $("#search_button").removeAttr("disabled");
+        load_fetch_link_form();
       }
     });
     return false;
   });
 });
+
+function load_fetch_link_form(){
+  var table = $('div.main_content table').dataTable();
+  links = [];
+  $(".link_checkbox").change(function(){
+    links.push($(this).val());
+  });
+  $("#download").click(function(){
+    if(links.length > 0){
+      $.ajax({
+        url: "/blog_list/fetch",
+        data: {links: links},
+        success: function(data){
+          console.log(data);
+        }
+      });
+    }
+    return false;
+  });
+}

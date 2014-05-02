@@ -1,0 +1,13 @@
+<html><head></head><body><p>Do you want to replace <a href="http://localhost/code/index.php/welcome/">http://localhost/code/index.php/welcome/</a> to <a href="http://localhost/code/index.php/welcome/">http://localhost/code/welcome/</a></p>
+<p>So simple. Follow the rules below.</p>
+<p>Create  .htaccess file in root directory.</p>
+<p>&#8216;code&#8217; is root directory</p>
+<p>gedit code/.htaccess</p>
+<p>And then add the below rules to that.</p>
+<pre>RewriteEngine on
+ RewriteCond $1 !^(index\.php|resources|robots\.txt)
+ RewriteCond %{REQUEST_FILENAME} !-f
+ RewriteCond %{REQUEST_FILENAME} !-d
+ RewriteRule ^(.*)$ index.php/$1 [L,QSA]</pre>
+<p><a href="http://localhost/code/index.php/welcome/">http://localhost/code/welcome/</a></p>
+<p>Done <span class='wp-smiley emoji emoji-smile' title=':)'>:)</span></p></body></html>

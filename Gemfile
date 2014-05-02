@@ -9,6 +9,8 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'nokogiri'
 gem 'simple-rss'
 gem 'redis'
+gem 'debugger'
+gem 'gepub'
 # gem 'therubyracer',  platforms: :ruby
 
 gem 'jquery-rails'

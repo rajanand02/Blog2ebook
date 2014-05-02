@@ -13,5 +13,5 @@
  *= require_self
  *= require bootstrap.min.css
  *= require blog_list.css.scss
- *= require dataTables/jquery.dataTables.bootstrap3
+ *= require dataTables/jquery.dataTables
  */
