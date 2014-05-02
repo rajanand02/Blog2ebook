@@ -3,7 +3,7 @@ class BlogService
   def initialize url
     @url = url
     @domain = nil
-    @blog_type = nil
+    @blog_type = "wordpress"
     detect_blog_type
   end
 
@@ -14,7 +14,7 @@ class BlogService
     elsif(hostname[".blogger."])
       @blog_type = "blogger"
     end
-    @domain = URI.parse(@url).scheme + "://" + hostname
+    @domain = hostname
   end
 
   def title_list
